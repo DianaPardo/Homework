@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Futballe</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Mada|Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton%7CMontserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!--Side navigation bar MODIFICADO DIANA-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!--Llamar a la base de datos de equipos desde SQL-->
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type a team">
+      <ul id="myMenu">
+      </ul>
+  
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Teams</span>
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+  <!-- Use any element to open the sidenav -->
+  <span onclick="openNav()">.</span>
+  <!--Get search tool into sidebar-->
+
+  <!-- dropdown para jugadores -->
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-primary">Players</button>
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+      <div class="dropdown-menu" id="playerslist" aria-labelledby="btnGroupDrop1">
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!--End of Side bar code-->
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      <div id="main">
+        ...
+      </div>
+      </div>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width= 100% height=100% viewBox="0 0 792 612">
+            <defs>
+              <linearGradient id="linear-gradient" x1="125.02" y1="426.96" x2="137.34" y2="426.96" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#ed1c24"/>
+                <stop offset="1" stop-color="#a21c24"/>
+              </linearGradient>
+            </defs>
+            <title>fut</title>
+            <g id="background">
+              <rect width="792" height="612" style="fill: #252426"/>
+            </g>
+            <g id="medio_circulos_y_negro" data-name="medio circulos y negro">
+              <ellipse cx="200.26" cy="284.31" rx="102" ry="103.72" style="fill: none;stroke: #00bf07;stroke-miterlimit: 10;stroke-width: 18px"/>
+              <ellipse cx="201.86" cy="284.46" rx="129.86" ry="131.76" style="fill: none;stroke: #ffde17;stroke-miterlimit: 10;stroke-width: 18px"/>
+              <circle cx="205.16" cy="284.46" r="78.5" style="fill: none;stroke: #e82828;stroke-miterlimit: 10;stroke-width: 18px"/>
+              <polygon points="205.16 116 205.16 445 390 445 390 132.59 205.16 116" style="fill: #252426"/>
+            </g>
+            <g id="lineas">
+              <path d="M284.41,191" style="fill: none"/>
+              <path d="M539.55,175.59" style="fill: none;stroke: #e5102a;stroke-miterlimit: 10;stroke-width: 9px"/>
+              <rect x="202.73" y="353.99" width="203.37" height="17.93" style="fill: #e82828"/>
+              <rect x="204.16" y="379.06" width="200.71" height="17.93" style="fill: #00bf07"/>
+              <rect x="202.25" y="407.26" width="204.16" height="17.93" style="fill: #ffde17"/>
+            </g>
+            <g id="grafica_lineas" data-name="grafica lineas">
+              <!-- <rect x="400" y="353.99" width="0" height="17.93" style="fill: #e82828"><animate id="rect-aggression" attributeName="width" from="0" to="340" dur="1s"/></rect>
+              <rect x="400" y="379.06" width="0" height="17.93" style="fill: #00bf07"><animate id="rect-overall" attributeName="width" from="0" to="300" dur="1s" fill="freeze"/></rect>
+              <rect x="400" y="407.26" width="0" height="17.93" style="fill: #ffde17"><animate id="rect-player-value" attributeName="width" from="0" to="155" dur="1s" fill="freeze"/></rect> -->
+              <rect id="rect-red" x="400" y="353.99" width="340" height="17.93" style="fill: #e82828"/>
+              <rect id="rect-green" x="400" y="379.06" width="300.96" height="17.93" style="fill: #00bf07"/>
+              <rect id="rect-yellow" x="400" y="407.26" width="156.45" height="17.93" style="fill: #ffde17"/>
+            </g>
+            <g id="points">
+              <g>
+                <line x1="194" y1="365.03" x2="131.18" y2="426.96" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 1.35639607906342px"/>
+                <ellipse cx="131.18" cy="426.96" rx="6.16" ry="6.07" style="fill: url(#linear-gradient)"/>
+              </g>
+              <line x1="106" y1="193.75" x2="68.52" y2="155.73" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+              <ellipse cx="68.52" cy="155.73" rx="6.07" ry="6.16" style="fill: #ffde17"/>
+              <line x1="200.26" y1="183.67" x2="238.28" y2="146.19" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 0.820868744871997px"/>
+              <ellipse cx="238.28" cy="146.19" rx="6.16" ry="6.07" style="fill: #00bf07"/>
+              <circle cx="653" cy="225" r="6.5" style="fill: #fff"/>
+            </g>
+            <g id="texto">
+              <text id="player_name" transform="translate(520 200)" style="font-size: 16px;fill: #fff;font-family: Monoton-Regular, Monoton">K. De Bruyne</text>
+              <text id="nationality" transform="translate(570 250)" style="font-size: 15px;fill: #fff;font-family: Monoton-Regular, Monoton">Belgium</text>
+              <text transform="translate(570 230)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300">COUNTRY</text>
+              <text id="team-red" transform="translate(100.76 476)" style="font-size: 26px;fill: #fff;font-family: Monoton-Regular, Monoton">62</text>
+              <text transform="translate(95.76 448)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300">AGGRESSION</text>
+              <text id="team-green" transform="translate(252.76 168.72)" style="font-size: 26px;fill: #fff;font-family: Monoton-Regular, Monoton">76</text>
+              <text transform="translate(252.76 140.12)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300">OVERALL</text>
+              <text id="team-yellow" transform="translate(33.76 132.02)" style="font-size: 26px;fill: #fff;font-family: Monoton-Regular, Monoton">113,363</text>
+              <!-- nuevos -->
+              <text id="player_red" transform="translate(440 353.99)" style="font-size: 10px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;">76</text>
+              <text id="player_green" transform="translate(440 379.06)" style="font-size: 10px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;">91</text>
+              <text id="player_yellow" transform="translate(440 407.26)" style="font-size: 10px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;">355,000</text>
+              <!-- yep -->
+              <text transform="translate(28.76 99.98)" style="font-size: 15px;fill: #fff;font-family: adineuePRO-Light, adineuePRO Light;font-weight: 300">WAGE</text>
+            </g>
+            <g id='logo'>
+              <text id="team" transform="translate(162.59 290)" style="font-size: 16px;fill: #fff;font-family: Monoton-Regular, Monoton">MANCHESTER CITY</text>
+              <!-- <image transform="translate(162.59 276.95)" xlink:href="https://cdn.sofifa.org/teams/2/light/11.png" height="25" width="25"/> -->
+            </g>
+            <g id="linea_blanca" data-name="linea blanca">
+              <line x1="412" y1="526" x2="412" y2="94" style="fill: none;stroke: #252426;stroke-miterlimit: 10;stroke-width: 26px"/>
+              <line x1="412" y1="35" x2="412" y2="577" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 1.5px"/>
+            </g>
+            
+          </svg>
+          
+  </div>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- d3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <!-- app -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
+
