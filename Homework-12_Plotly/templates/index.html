@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Flask Plotlyjs Example</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Diversity</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>SELECT Sample:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+   
+    <div class="container">
+        <div class="jumbptron">
+            <h1 style="text-align: Center">Belly Button Biodiversity Dashboard</h1>
+            <p style="text-align: Center">Use this interactive charts below to explore the dataset</p>
         </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Sample MetaData</h3>
+    
+    </div>
+    
+    <div class="container">       
+        <form>
+          <div class="form-group">
+            <label for="sel1">SELECT SAMPLE:</label>           
+            <select class="form-control" id="selDataset" onchange="optionChanged(this.value)"></select>              
           </div>
-          <div id="sample-metadata" class="panel-body"></div>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div id="pie"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
+        </form>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div id="bubble"></div>
+
+    <div class="container">
+            <div class="jumbotron">
+                <h3>Sample Metadata</h3>
+            </div>
+            <div class="row">
+                <div id="sample_details" class="col-md-6">
+                <ul id="metadataList"> 
+                                      
+                 </ul>
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
     </div>
-  </div>
 
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
+    <div id="piePlot"></div>
+    <div id="bubblePlot"></div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
-
 </html>
